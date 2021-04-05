@@ -4,8 +4,9 @@ public class Member {
 
     private Long id;
     private String name;
-    private String address;
     private String age;
+    private String address;
+
 
     public Long getId() {
         return id;
@@ -23,6 +24,14 @@ public class Member {
         this.name = name;
     }
 
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
     public String getAddress() {
         return address;
     }
@@ -31,11 +40,4 @@ public class Member {
         this.address = address;
     }
 
-    public String getAge() {
-        return age;
-    }
-
-    public void setAge(String age) {
-        this.age = age;
-    }
 }

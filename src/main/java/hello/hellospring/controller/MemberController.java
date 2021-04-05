@@ -8,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -30,12 +29,10 @@ public class MemberController {
     public String create(MemberForm form) {
         Member member = new Member();
         member.setName(form.getName());
-        member.setAddress(form.getAddress());
-        member.setAge(form.getAge());
 
         System.out.println("이름 : " +member.getName());
-        System.out.println("주소 : " +member.getAddress());
         System.out.println("나이 : " +member.getAge());
+        System.out.println("주소 : " +member.getAddress());
 
         memberService.join(member);
 
