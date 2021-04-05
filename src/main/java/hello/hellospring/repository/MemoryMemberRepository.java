@@ -34,6 +34,20 @@ public class MemoryMemberRepository implements MemberRepository{
     }
 
     @Override
+    public Optional<Member> findByAddress(String address) {
+
+        return Optional.ofNullable(store.get(address));
+    }
+
+    @Override
+    public Optional<Member> findByAge(String age) {
+
+        return Optional.ofNullable(store.get(age));
+
+    }
+
+
+    @Override
     public List<Member> findAll() {
         return new ArrayList<>(store.values());
     }
