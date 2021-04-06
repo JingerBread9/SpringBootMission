@@ -30,22 +30,32 @@ public class HelloController {
 
     @GetMapping("hello-api")
     @ResponseBody
-    public Hello helloApi(@RequestParam("name") String name) {
+    public Hello helloApi(@RequestParam("name") String name, @RequestParam("age") String age) {
         Hello hello = new Hello();
         hello.setName(name);
+        hello.setAge(age);
+        System.out.println("이름 : " +name);
+        System.out.println("나이 : " +age);
+
         return hello;
     }
 
     static class Hello{
         private String name;
+        private String age;
 
         public String getName() {
             return name;
+        }
+        public String getAge() {
+            return age;
         }
 
         public void setName(String name) {
             this.name = name;
         }
+
+        public void setAge(String age) { this.age = age; }
     }
 
 }

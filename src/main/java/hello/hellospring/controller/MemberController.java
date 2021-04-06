@@ -29,10 +29,13 @@ public class MemberController {
     public String create(MemberForm form) {
         Member member = new Member();
         member.setName(form.getName());
+        member.setAge(form.getAge());
+        member.setAddress(form.getAddress());
 
         System.out.println("이름 : " +member.getName());
         System.out.println("나이 : " +member.getAge());
         System.out.println("주소 : " +member.getAddress());
+        System.out.println("나이 : " +form.getAge());
 
         memberService.join(member);
 
